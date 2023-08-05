@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UXPagerView" customModule="Powerplay" customModuleProvider="target">
+            <connections>
+                <outlet property="pageView" destination="2nm-GZ-icX" id="KPB-qj-t1p"/>
+                <outlet property="tabView" destination="spe-Mc-Qap" id="uLr-ml-VR9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="551"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTM-v6-OXI">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="551"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nm-GZ-icX" customClass="UXPageContainer" customModule="Powerplay" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="42" width="393" height="509"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spe-Mc-Qap" customClass="UXPageTabContainer" customModule="Powerplay" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="42"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="gru-iD-fgV"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="2nm-GZ-icX" firstAttribute="top" secondItem="spe-Mc-Qap" secondAttribute="bottom" id="2Qn-1i-H4W"/>
+                        <constraint firstAttribute="bottom" secondItem="2nm-GZ-icX" secondAttribute="bottom" id="8e1-vp-7WU"/>
+                        <constraint firstItem="2nm-GZ-icX" firstAttribute="leading" secondItem="nTM-v6-OXI" secondAttribute="leading" id="9dh-z1-APd"/>
+                        <constraint firstItem="spe-Mc-Qap" firstAttribute="leading" secondItem="nTM-v6-OXI" secondAttribute="leading" id="C0F-Dv-Ae4"/>
+                        <constraint firstAttribute="trailing" secondItem="spe-Mc-Qap" secondAttribute="trailing" id="LKB-42-DBI"/>
+                        <constraint firstItem="spe-Mc-Qap" firstAttribute="top" secondItem="nTM-v6-OXI" secondAttribute="top" id="LuS-3S-kDe"/>
+                        <constraint firstAttribute="trailing" secondItem="2nm-GZ-icX" secondAttribute="trailing" id="fUl-2X-17D"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="nTM-v6-OXI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="3yS-kw-9Wp"/>
+                <constraint firstAttribute="trailing" secondItem="nTM-v6-OXI" secondAttribute="trailing" id="B1X-x4-nJN"/>
+                <constraint firstItem="nTM-v6-OXI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="l5Z-yr-Ucg"/>
+                <constraint firstAttribute="bottom" secondItem="nTM-v6-OXI" secondAttribute="bottom" id="yg7-kT-N9x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="49.618320610687022" y="-13.732394366197184"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
