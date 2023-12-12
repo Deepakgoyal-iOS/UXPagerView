@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UXPagerView" customModule="Powerplay" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UXPagerView" customModule="UXPagerView" customModuleProvider="target">
             <connections>
                 <outlet property="pageView" destination="2nm-GZ-icX" id="KPB-qj-t1p"/>
                 <outlet property="tabView" destination="spe-Mc-Qap" id="uLr-ml-VR9"/>
@@ -21,26 +23,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTM-v6-OXI">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="551"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nm-GZ-icX" customClass="UXPageContainer" customModule="Powerplay" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="42" width="393" height="509"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spe-Mc-Qap" customClass="UXPageTabContainer" customModule="Powerplay" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="42"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="42" id="gru-iD-fgV"/>
-                            </constraints>
-                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rIj-4q-CPp">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="551"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spe-Mc-Qap" customClass="UXPageTabContainer" customModule="UXPagerView" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="42"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="42" id="gru-iD-fgV"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nm-GZ-icX" customClass="UXPageContainer" customModule="UXPagerView" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="42" width="393" height="509"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="2nm-GZ-icX" firstAttribute="top" secondItem="spe-Mc-Qap" secondAttribute="bottom" id="2Qn-1i-H4W"/>
-                        <constraint firstAttribute="bottom" secondItem="2nm-GZ-icX" secondAttribute="bottom" id="8e1-vp-7WU"/>
-                        <constraint firstItem="2nm-GZ-icX" firstAttribute="leading" secondItem="nTM-v6-OXI" secondAttribute="leading" id="9dh-z1-APd"/>
-                        <constraint firstItem="spe-Mc-Qap" firstAttribute="leading" secondItem="nTM-v6-OXI" secondAttribute="leading" id="C0F-Dv-Ae4"/>
-                        <constraint firstAttribute="trailing" secondItem="spe-Mc-Qap" secondAttribute="trailing" id="LKB-42-DBI"/>
-                        <constraint firstItem="spe-Mc-Qap" firstAttribute="top" secondItem="nTM-v6-OXI" secondAttribute="top" id="LuS-3S-kDe"/>
-                        <constraint firstAttribute="trailing" secondItem="2nm-GZ-icX" secondAttribute="trailing" id="fUl-2X-17D"/>
+                        <constraint firstItem="rIj-4q-CPp" firstAttribute="leading" secondItem="nTM-v6-OXI" secondAttribute="leading" id="3hp-qq-KWp"/>
+                        <constraint firstAttribute="bottom" secondItem="rIj-4q-CPp" secondAttribute="bottom" id="Dgw-g8-neF"/>
+                        <constraint firstAttribute="trailing" secondItem="rIj-4q-CPp" secondAttribute="trailing" id="dzM-w8-ceI"/>
+                        <constraint firstItem="rIj-4q-CPp" firstAttribute="top" secondItem="nTM-v6-OXI" secondAttribute="top" id="gaZ-CJ-i6I"/>
                     </constraints>
                 </view>
             </subviews>
