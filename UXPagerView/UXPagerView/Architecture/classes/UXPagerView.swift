@@ -71,14 +71,43 @@ class UXPagerView: UIView{
         pageView.reloadPage(withSelectedIndex: selectedTabIndex)
     }
     
-    func resetAll(withSelectedIndex index: Int) {
+    func reset(withSelectingIndex index: Int) {
         cachedPages.removeAll()
         selectedTabIndex = index
     }
     
-    func reloadView(withIndex index: Int) {
+    func reloadView(withSelectedIndex index: Int) {
         cachedPages[index] = nil
         selectedTabIndex = index
+    }
+    
+    
+    func set(isBounceOnScroll: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            self?.tabView.set(isBounceOnScroll: isBounceOnScroll)
+        }
+    }
+    
+    func set(backgroundColor: UIColor) {
+        DispatchQueue.main.async { [weak self] in
+            self?.tabView.set(backgroundColor: backgroundColor)
+        }
+    }
+    
+    func set(selectedTabIndex: Int) {
+        self.selectedTabIndex = selectedTabIndex
+    }
+    
+    func set(isTabViewHidden: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            self?.tabView.isHidden = isTabViewHidden
+        }
+    }
+    
+    func reloadView(atIndex index: Int){
+        cachedPages[index] = nil
+        let selectedTab = self.selectedTabIndex
+        selectedTabIndex = selectedTab
     }
     
     private func restorePages(forIndex accessedIndex: Int){
@@ -92,7 +121,7 @@ class UXPagerView: UIView{
         }
         storedPages[accessedIndex] = getPage(atIndex: accessedIndex)
         
-        // chaining used here because there exists a case, where lastAccessedPageIndex == accessedIndex and `pageAtIndex` delegate method is called twice. 
+        // chaining used here because there exists a case, where lastAccessedPageIndex == accessedIndex and `pageAtIndex` delegate method is called twice.
         storedPages[lastAccessedPageIndex] = storedPages[lastAccessedPageIndex] ?? getPage(atIndex: lastAccessedPageIndex)
         lastAccessedPageIndex = accessedIndex
         self.cachedPages = storedPages
@@ -105,7 +134,7 @@ class UXPagerView: UIView{
     }
 }
 extension UXPagerView: UXPagerTabContainerDelegate{
-
+    
     func numberOfTabs() -> Int {
         return delegate?.numberOfPages(self) ?? 0
     }
@@ -140,6 +169,7 @@ extension UXPagerView: UXPageContainerDelegate{
     
     func didSelectPage(atIndex index: Int) {
         selectedTabIndex = index
+        delegate?.pagerView(self, didSelectTabAt: index)
     }
     
 }
