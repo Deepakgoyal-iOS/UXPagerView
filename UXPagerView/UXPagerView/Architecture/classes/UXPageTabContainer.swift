@@ -60,6 +60,18 @@ class UXPageTabContainer: UIView{
         selectedIndex = index
         self.cvTabs.reloadData()
     }
+    
+    func set(isBounceOnScroll: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            self?.cvTabs.bounces = isBounceOnScroll
+        }
+    }
+    
+    func set(backgroundColor: UIColor) {
+        DispatchQueue.main.async { [weak self] in
+            self?.cvTabs.backgroundColor = backgroundColor
+        }
+    }
 
 }
 extension UXPageTabContainer: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
