@@ -1,7 +1,7 @@
 # UXPagerView
 Built in swift for iOS
 
-Checkout for detailed Project - Deepakgoyal-iOS/UXPagerViewProject
+Checkout for detailed Project - [Deepakgoyal-iOS/UXPagerViewProject](https://github.com/Deepakgoyal-iOS/UXPagerViewProject)
 
 
 https://github.com/user-attachments/assets/81a0da6d-d801-444a-b2d2-bd5032ab2c14
