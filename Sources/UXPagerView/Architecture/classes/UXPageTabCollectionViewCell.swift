@@ -22,7 +22,9 @@ class UXPageTabCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        setupUI()
+        DispatchQueue.main.async {
+            self.setupUI()
+        }
     }
     
     private func setupUI(){

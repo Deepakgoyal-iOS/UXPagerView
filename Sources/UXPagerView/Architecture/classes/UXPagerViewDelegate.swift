@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 protocol UXPagerViewDelegate: AnyObject{
     
     /// Total Number of tabs / pages `[Required]`

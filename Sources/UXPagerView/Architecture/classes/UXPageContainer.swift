@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 protocol UXPageContainerDelegate: AnyObject{
     func numberOfPageItems() -> Int
     func cellForPageRow(_ collectionView: UICollectionView, atIndex index: IndexPath) -> UICollectionViewCell?

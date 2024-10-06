@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 extension String{
     
     func width(for font: UIFont?, numberOfLines: Int = 1) -> CGFloat {

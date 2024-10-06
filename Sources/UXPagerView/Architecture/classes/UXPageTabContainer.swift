@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 protocol UXPagerTabContainerDelegate: AnyObject{
     func numberOfTabs() -> Int
     func cellForTabRow(_ collectionView: UICollectionView, atIndex index: IndexPath, isSelected: Bool) -> UICollectionViewCell?

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 protocol UXPageBaseViewControllerProtocol{
     
     func getTabTitle() -> String
