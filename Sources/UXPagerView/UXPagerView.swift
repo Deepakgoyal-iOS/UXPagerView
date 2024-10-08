@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UXPagerView: UIView{
+public class UXPagerView: UIView{
     
     // MARK: Use this page view as your subview
     
