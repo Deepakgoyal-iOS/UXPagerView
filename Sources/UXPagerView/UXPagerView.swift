@@ -59,7 +59,7 @@ public class UXPagerView: UIView{
         fromNib()
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         initializeUI()
     }
