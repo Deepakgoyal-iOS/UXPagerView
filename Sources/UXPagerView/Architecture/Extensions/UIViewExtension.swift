@@ -13,7 +13,7 @@ extension UIView{
     func fromNib() -> UIView?{
         
         let nibName = String(describing: Self.self)
-        guard let contentView = Bundle.main.loadNibNamed(nibName, owner: self)?.first as? UIView else { return nil }
+        guard let contentView = Bundle.module.loadNibNamed(nibName, owner: self)?.first as? UIView else { return nil }
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(contentView)
