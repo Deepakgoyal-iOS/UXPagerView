@@ -32,7 +32,7 @@ public class UXPagerView: UIView{
         return Array(cachedPages.values)
     }
     
-    private(set) var selectedTabIndex: Int = 0 {
+    public internal(set) var selectedTabIndex: Int = 0 {
         didSet{
             restorePages(forIndex: selectedTabIndex)
             reloadData()
