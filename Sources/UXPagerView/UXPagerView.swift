@@ -43,7 +43,7 @@ public class UXPagerView: UIView{
     public var defaultSelectedTab = 0
     
     /// `Delegate to render data
-    weak var delegate: UXPagerViewDelegate?{
+    public weak var delegate: UXPagerViewDelegate?{
         didSet{
             registerCells()
         }
@@ -155,7 +155,7 @@ public class UXPagerView: UIView{
 }
 extension UXPagerView: UXPagerTabContainerDelegate{
     
-    func numberOfTabs() -> Int {
+    public func numberOfTabs() -> Int {
         return delegate?.numberOfPages(self) ?? 0
     }
     
@@ -256,5 +256,9 @@ extension UXPagerView {
     public func reset(withSelectingIndex index: Int) {
         cachedPages.removeAll()
         selectedTabIndex = index
+    }
+    
+    public func reloadTabView(withSelectedIndex selectedTabIndex: Int) {
+        tabView.reloadTabs(withSelectedIndex: selectedTabIndex)
     }
 }

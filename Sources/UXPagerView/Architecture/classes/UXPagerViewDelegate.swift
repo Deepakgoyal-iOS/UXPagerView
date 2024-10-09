@@ -8,7 +8,7 @@
 import UIKit
 
 @MainActor
-protocol UXPagerViewDelegate: AnyObject{
+public protocol UXPagerViewDelegate: AnyObject{
     
     /// Total Number of tabs / pages `[Required]`
     /// - Parameter view: Pager View instance
