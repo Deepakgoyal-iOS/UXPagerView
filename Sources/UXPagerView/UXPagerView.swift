@@ -155,7 +155,7 @@ public class UXPagerView: UIView{
 }
 extension UXPagerView: UXPagerTabContainerDelegate{
     
-    public func numberOfTabs() -> Int {
+    func numberOfTabs() -> Int {
         return delegate?.numberOfPages(self) ?? 0
     }
     

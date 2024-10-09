@@ -73,7 +73,7 @@ public protocol UXPagerViewDelegate: AnyObject{
     ///   - index: Index path of tab
     func pagerView(_ view: UXPagerView, didSwipeTabTo index: Int)
 }
-extension UXPagerViewDelegate{
+public extension UXPagerViewDelegate{
     
     func pagerView(_ view: UXPagerView, cellForTabAtIndex index: IndexPath, collectionView: UICollectionView, isSelected: Bool) -> UICollectionViewCell?{
         
