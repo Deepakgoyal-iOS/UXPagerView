@@ -51,7 +51,7 @@ class UXPageContainer: UIView{
     func registerCells(cellIds: [String]){
         
         cellIds.forEach({ id in
-            cvPages.register(UINib(nibName: id, bundle: nil), forCellWithReuseIdentifier: id)
+            cvPages.register(UINib(nibName: id, bundle: Bundle.module), forCellWithReuseIdentifier: id)
         })
     }
     
