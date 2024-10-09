@@ -34,7 +34,7 @@
                                         <constraint firstAttribute="height" constant="42" id="gru-iD-fgV"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nm-GZ-icX" customClass="UXPageContainer" customModule="UXPagerView" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nm-GZ-icX" customClass="UXPageContainer" customModule="UXPagerView">
                                     <rect key="frame" x="0.0" y="42" width="393" height="509"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
