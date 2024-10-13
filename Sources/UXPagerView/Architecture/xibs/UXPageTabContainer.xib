@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UXPageTabContainer" customModule="UXPagerView" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UXPageTabContainer" customModule="UXPagerView">
             <connections>
                 <outlet property="cvFlowLayout" destination="9PK-0f-4sS" id="GWS-wm-uaF"/>
                 <outlet property="cvTabs" destination="PjW-p4-HUj" id="TgH-aS-XsU"/>

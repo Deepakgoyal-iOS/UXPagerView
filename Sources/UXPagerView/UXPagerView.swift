@@ -28,11 +28,11 @@ public class UXPagerView: UIView{
 
     /// `Returns -` all the cached pages
     // Value count is at-most [`cachedPageLimit` + 2]
-    var loadedPages: [UIViewController]{
+    public var loadedPages: [UIViewController]{
         return Array(cachedPages.values)
     }
     
-    private(set) var selectedTabIndex: Int = 0 {
+    public internal(set) var selectedTabIndex: Int = 0 {
         didSet{
             restorePages(forIndex: selectedTabIndex)
             reloadData()
@@ -40,10 +40,10 @@ public class UXPagerView: UIView{
     }
 
     /// `Default tab to show selected.
-    var defaultSelectedTab = 0
+    public var defaultSelectedTab = 0
     
     /// `Delegate to render data
-    weak var delegate: UXPagerViewDelegate?{
+    public weak var delegate: UXPagerViewDelegate?{
         didSet{
             registerCells()
         }
@@ -76,7 +76,7 @@ public class UXPagerView: UIView{
     }
     
     /// Call to refresh tab & page view
-    func reloadData(){
+    public func reloadData(){
         tabView.reloadTabs(withSelectedIndex: selectedTabIndex)
         pageView.reloadPage(withSelectedIndex: selectedTabIndex)
     }
@@ -84,7 +84,7 @@ public class UXPagerView: UIView{
     /// Call to clear the cached page at particular index if exists.
     /// - Parameter index: Cached page index to be cleared,
     ///                    If index is not passed all pages gets cleared.
-    func clearCachedPage(atIndex index: Int? = nil){
+    public func clearCachedPage(atIndex index: Int? = nil){
         if let index{
             cachedPages[index] = nil
             return
@@ -95,13 +95,13 @@ public class UXPagerView: UIView{
     /// Call to clear the cached page at particular index if exists.
     /// - Parameter index: Cached page index to be cleared,
     ///                    If index is not passed all pages gets cleared.
-    func set(cachedPageLimit: Int){
+    public func set(cachedPageLimit: Int){
         self.cachedPageLimit = cachedPageLimit
     }
     
     /// Call to select particular index in pager view
     /// - Parameter index: If index is less than 0 and if index is greater than number of pages then it                                            returns without selecting page index.
-    func set(selectedTabIndex: Int) {
+    public func set(selectedTabIndex: Int) {
         
         guard let numberOfPages = delegate?.numberOfPages(self), selectedTabIndex < numberOfPages, selectedTabIndex >= 0 else { return }
         
@@ -113,43 +113,43 @@ public class UXPagerView: UIView{
     /// - Parameters:
     ///   - index: Tab Index
     ///   - returns: Page / UIViewController at index if present else returns `nil`
-    func pageForTab(atIndex index: Int) -> UIViewController?{
+    public func pageForTab(atIndex index: Int) -> UIViewController?{
         return cachedPages[index]
     }
     
-    func set(isBounceOnScroll: Bool) {
+    public func set(isBounceOnScroll: Bool) {
         DispatchQueue.main.async { [weak self] in
             self?.tabView.set(isBounceOnScroll: isBounceOnScroll)
         }
     }
     
-    func set(tabBackgroundColor: UIColor) {
+    public func set(tabBackgroundColor: UIColor) {
         DispatchQueue.main.async { [weak self] in
             self?.tabView.set(backgroundColor: tabBackgroundColor)
         }
     }
     
-    func set(containerBackgroundColor: UIColor) {
+    public func set(containerBackgroundColor: UIColor) {
         DispatchQueue.main.async { [weak self] in
             self?.containerBackgroundColor = containerBackgroundColor
         }
     }
 
-    func set(isTabViewHidden: Bool) {
+    public func set(isTabViewHidden: Bool) {
         DispatchQueue.main.async { [weak self] in
             self?.tabView.isHidden = isTabViewHidden
         }
     }
     
-    func set(isSwipeEnabled: Bool) {
+    public func set(isSwipeEnabled: Bool) {
         pageView.set(isSwipeEnabled: isSwipeEnabled)
     }
     
-    func set(tabBarHeight: CGFloat) {
+    public func set(tabBarHeight: CGFloat) {
         self.tabBarHeightConstraint.constant = tabBarHeight
     }
     
-    func set(isTabSelectionEnabled: Bool) {
+    public func set(isTabSelectionEnabled: Bool) {
         self.isTabSelectionEnabled = isTabSelectionEnabled
     }
 }
@@ -238,14 +238,14 @@ extension UXPagerView {
     
     /// Call to rebuild page at particular index
     /// - Parameter index: Index to be rebuilt, clears selected page from cache if exists and creates                                           new page.
-    func reloadView(withSelectedIndex index: Int) {
+    public func reloadView(withSelectedIndex index: Int) {
         cachedPages[index] = nil
         selectedTabIndex = index
     }
     
     /// Call to clear particular index and reload page view
     /// - Parameter index: Index you need to clear and reload page
-    func reloadView(atIndex index: Int){
+    public func reloadView(atIndex index: Int){
         cachedPages[index] = nil
         let selectedTab = self.selectedTabIndex
         selectedTabIndex = selectedTab
@@ -253,8 +253,12 @@ extension UXPagerView {
     
     /// Call to clear all cached pages and re build new pages with selected Index
     /// - Parameter index: the index need to be kept selected.
-    func reset(withSelectingIndex index: Int) {
+    public func reset(withSelectingIndex index: Int) {
         cachedPages.removeAll()
         selectedTabIndex = index
+    }
+    
+    public func reloadTabView(withSelectedIndex selectedTabIndex: Int) {
+        tabView.reloadTabs(withSelectedIndex: selectedTabIndex)
     }
 }

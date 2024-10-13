@@ -8,7 +8,7 @@
 import UIKit
 
 @MainActor
-protocol UXPagerViewDelegate: AnyObject{
+public protocol UXPagerViewDelegate: AnyObject{
     
     /// Total Number of tabs / pages `[Required]`
     /// - Parameter view: Pager View instance
@@ -73,7 +73,7 @@ protocol UXPagerViewDelegate: AnyObject{
     ///   - index: Index path of tab
     func pagerView(_ view: UXPagerView, didSwipeTabTo index: Int)
 }
-extension UXPagerViewDelegate{
+public extension UXPagerViewDelegate{
     
     func pagerView(_ view: UXPagerView, cellForTabAtIndex index: IndexPath, collectionView: UICollectionView, isSelected: Bool) -> UICollectionViewCell?{
         

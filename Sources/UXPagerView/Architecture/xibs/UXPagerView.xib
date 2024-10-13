@@ -27,14 +27,14 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EGy-8l-SkP">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="551"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spe-Mc-Qap" customClass="UXPageTabContainer" customModule="UXPagerView" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spe-Mc-Qap" customClass="UXPageTabContainer" customModule="UXPagerView">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="42"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="42" id="gru-iD-fgV"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nm-GZ-icX" customClass="UXPageContainer" customModule="UXPagerView" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nm-GZ-icX" customClass="UXPageContainer" customModule="UXPagerView">
                                     <rect key="frame" x="0.0" y="42" width="393" height="509"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
