@@ -47,7 +47,7 @@ class UXPageTabContainer: UIView{
     func registerCells(cellIds: [String]){
         
         cellIds.unique().forEach({ id in
-            cvTabs.register(UINib(nibName: id, bundle: nil), forCellWithReuseIdentifier: id)
+            cvTabs.register(UINib(nibName: id, bundle: Bundle.module), forCellWithReuseIdentifier: id)
         })
     }
     
