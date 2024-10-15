@@ -22,6 +22,8 @@ class UXPageTabContainer: UIView{
     @IBOutlet weak var cvFlowLayout: UICollectionViewFlowLayout!
     private var selectedIndex = 0
     
+    private var moduleNibs = ["UXPageTabCollectionViewCell"]
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         fromNib()
@@ -48,7 +50,7 @@ class UXPageTabContainer: UIView{
         
         cellIds.unique().forEach({ id in
             
-            let nib = /*id == "UXPageTabCollectionViewCell" ?  UINib(nibName: id, bundle: Bundle.module) : */ UINib(nibName: id, bundle: .main)
+            let nib = moduleNibs.contains(id) ?  UINib(nibName: id, bundle: Bundle.module) :  UINib(nibName: id, bundle: nil)
             cvTabs.register(nib, forCellWithReuseIdentifier: id)
         })
     }
