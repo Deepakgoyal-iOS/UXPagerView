@@ -25,6 +25,8 @@ public class UXPagerView: UIView{
     private var lastAccessedPageIndex = 0
     private var isTabSelectionEnabled: Bool = true
     private var containerBackgroundColor: UIColor = .white
+    
+    public static let defaultTabHeight = 42.0
 
     /// `Returns -` all the cached pages
     // Value count is at-most [`cachedPageLimit` + 2]
@@ -152,6 +154,11 @@ public class UXPagerView: UIView{
     public func set(isTabSelectionEnabled: Bool) {
         self.isTabSelectionEnabled = isTabSelectionEnabled
     }
+    
+    public func layoutPageSubViews() {
+        self.pageView.layoutSubviews()
+    }
+
 }
 extension UXPagerView: UXPagerTabContainerDelegate{
     
