@@ -48,7 +48,7 @@ class UXPageTabContainer: UIView{
         
         cellIds.unique().forEach({ id in
             
-            let nib = /*id == "UXPageTabCollectionViewCell" ?  UINib(nibName: id, bundle: Bundle.module) :*/  UINib(nibName: id, bundle: nil)
+            let nib = /*id == "UXPageTabCollectionViewCell" ?  UINib(nibName: id, bundle: Bundle.module) : */ UINib(nibName: id, bundle: .main)
             cvTabs.register(nib, forCellWithReuseIdentifier: id)
         })
     }
