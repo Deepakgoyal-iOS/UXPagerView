@@ -97,7 +97,8 @@ extension UXPageTabContainer: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return delegate?.sizeForTab(collectionView, atIndex: indexPath, isSelected: selectedIndex == indexPath.row) ?? CGSize(width: cvTabs.bounds.width/3, height: cvTabs.bounds.height)
+        let size = delegate?.sizeForTab(collectionView, atIndex: indexPath, isSelected: selectedIndex == indexPath.row) ?? CGSize(width: cvTabs.bounds.width/3, height: cvTabs.bounds.height)
+        return CGSizeMake(size.width, size.height - 1)
     }
 }
 
