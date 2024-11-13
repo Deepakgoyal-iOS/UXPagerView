@@ -171,6 +171,7 @@ extension UXPagerView: UXPagerTabContainerDelegate{
     }
     
     func didSelectTab(atIndex index: Int) {
+        guard isTabSelectionEnabled else { return }
         selectedTabIndex = index
         delegate?.pagerView(self, didSelectTabAt: index)
     }
