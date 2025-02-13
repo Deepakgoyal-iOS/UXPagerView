@@ -53,11 +53,11 @@ class UXPageTabCollectionViewCell: UICollectionViewCell {
         badgeCountLbl.text = "\(text ?? 0)"
     }
   
-    func set(separatorColor: UIColor){
+    func set(separatorColor: UIColor?){
         self.separatorView.backgroundColor = separatorColor
     }
 
-    func set(font: UIFont){
+    func set(font: UIFont?){
         self.titleLbl.font = font
     }
     
