@@ -19,7 +19,7 @@ public class UXPageTabCollectionViewCell: UICollectionViewCell {
     static let widthInsetExcludingTitle = 50.0
     static let widthInsetExcludingTitleAndBadge = 32.0
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         DispatchQueue.main.async {
