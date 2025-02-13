@@ -88,6 +88,8 @@ public extension UXPagerViewDelegate{
         cell.setTitleLbl(pagerView(view, tabTitleAtIndex: indexPath.row))
         cell.setBadgeCountLbl(pagerView(view, tabBadgeAtIndex: indexPath.row))
         cell.setSelected(isSelected)
+        cell.set(font: view.font)
+        cell.set(separatorColor: view.separatorColor)
         return cell
     }
     
