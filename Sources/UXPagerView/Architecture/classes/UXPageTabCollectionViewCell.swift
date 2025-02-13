@@ -64,6 +64,12 @@ class UXPageTabCollectionViewCell: UICollectionViewCell {
             self.titleLbl.font = font ?? .systemFont(ofSize: 14)
          }   
     }
+
+    func set(textColor: UIColor?){
+        DispatchQueue.main.async {
+            self.titleLbl.textColor = textColor ?? .black
+         } 
+    }
     
     func setSelected(_ isSelected: Bool){
         self.separatorView.backgroundColor = isSelected ? .systemBlue : UIColor(red: 242/255.0, green: 242/255.0, blue: 247/255.0, alpha: 1)
