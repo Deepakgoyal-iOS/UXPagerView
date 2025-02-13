@@ -52,6 +52,14 @@ class UXPageTabCollectionViewCell: UICollectionViewCell {
         badgeCountContainer.isHidden = (text ?? 0) == 0
         badgeCountLbl.text = "\(text ?? 0)"
     }
+  
+    func set(separatorColor: UIColor){
+        self.separatorView.backgroundColor = separatorColor
+    }
+
+    func set(font: UIFont){
+        self.titleLbl.font = font
+    }
     
     func setSelected(_ isSelected: Bool){
         self.separatorView.backgroundColor = isSelected ? .systemBlue : UIColor(red: 242/255.0, green: 242/255.0, blue: 247/255.0, alpha: 1)
