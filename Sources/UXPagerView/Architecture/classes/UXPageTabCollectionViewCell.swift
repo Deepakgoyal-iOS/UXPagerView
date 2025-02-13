@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UXPageTabCollectionViewCell: UICollectionViewCell {
+public class UXPageTabCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var badgeCountLbl: UILabel!
