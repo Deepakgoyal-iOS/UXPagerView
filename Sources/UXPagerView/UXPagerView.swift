@@ -25,8 +25,6 @@ public class UXPagerView: UIView{
     private var lastAccessedPageIndex = 0
     private var isTabSelectionEnabled: Bool = true
     private var containerBackgroundColor: UIColor = .white
-    private(set) var font: UIFont?
-    private(set) var separatorColor: UIColor?
     
     public static let defaultTabHeight = 42.0
 
@@ -144,15 +142,6 @@ public class UXPagerView: UIView{
             self?.tabView.isHidden = isTabViewHidden
         }
     }
-
-    public func set(font: UIFont){
-        self.font = font
-    }
-    
-    public func set(separatorColor: UIColor){
-        self.separatorColor = separatorColor
-    }
-    
     
     public func set(isSwipeEnabled: Bool) {
         pageView.set(isSwipeEnabled: isSwipeEnabled)
