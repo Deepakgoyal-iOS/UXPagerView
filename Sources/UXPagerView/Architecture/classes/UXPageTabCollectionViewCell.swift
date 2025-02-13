@@ -53,19 +53,19 @@ public class UXPageTabCollectionViewCell: UICollectionViewCell {
         badgeCountLbl.text = "\(text ?? 0)"
     }
   
-    func set(separatorColor: UIColor?){
+    public func set(separatorColor: UIColor?){
          DispatchQueue.main.async {
             self.sideSeparatorView.backgroundColor = separatorColor ?? UIColor(red: 242/255.0, green: 242/255.0, blue: 247/255.0, alpha: 1)
          }     
     }
 
-    func set(font: UIFont?){
+    public func set(font: UIFont?){
          DispatchQueue.main.async {
             self.titleLbl.font = font ?? .systemFont(ofSize: 14)
          }   
     }
 
-    func set(textColor: UIColor?){
+    public func set(textColor: UIColor?){
         DispatchQueue.main.async {
             self.titleLbl.textColor = textColor ?? .black
          } 
