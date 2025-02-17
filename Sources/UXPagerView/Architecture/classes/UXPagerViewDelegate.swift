@@ -102,7 +102,7 @@ public extension UXPagerViewDelegate{
     func getDynamicCellSize(_ view: UXPagerView, sizeForTabAtIndex index: IndexPath, collectionView: UICollectionView, isSelected: Bool) -> CGSize?{
         let inset = pagerView(view, tabBadgeAtIndex: index.row) == 0 ? UXPageTabCollectionViewCell.widthInsetExcludingTitleAndBadge : UXPageTabCollectionViewCell.widthInsetExcludingTitle
         let font: UIFont? = isSelected ? .systemFont(ofSize: 14, weight: .semibold) : .systemFont(ofSize: 14)
-        let titleWidth = pagerView(view, tabTitleAtIndex: index.row).width(for: font) + inset
+        let titleWidth = pagerView(view, tabTitleAtIndex: index.row).width(for: font) + inset + 8 // 8 is error constant in case if there's any
         return CGSize(width: titleWidth, height: UXPageTabCollectionViewCell.cellHeight)
     }
     
